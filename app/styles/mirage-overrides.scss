@@ -1,0 +1,31 @@
+.mirage-overrides {
+  width: 100%;
+}
+
+.mirage-overrides button {
+  padding: 0;
+}
+
+.mirage-overrides input[type="checkbox"] {
+  width: 100%;
+}
+
+.mirage-overrides--route {
+  background-color: #ccc;
+}
+
+.mirage-overrides--route th:first-child {
+  text-align: left;
+}
+
+.mirage-overrides--condition:nth-child(2n) {
+  background-color: #eee;
+}
+
+.mirage-overrides--condition--add-qp {
+  text-align: right;
+}
+
+.mirage-overrides--queryparam:first-child .mirage-overrides--queryparam--and {
+  visibility: hidden;
+}

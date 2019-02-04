@@ -1,0 +1,11 @@
+<span class="mirage-overrides--queryparam--and">and</span>
+{{input placeholder="parameter" type="text" value=model.param size=8 key-press=(action "queryParamChanged")}}
+<select class="mirage-overrides--queryparam--mode" {{action "changeMode" on="change"}}>
+  {{#each qpModes as |mode|}}
+    <option value={{mode}} selected={{eq model.mode mode}}>{{mode}}</option>
+  {{/each}}
+</select>
+{{#if (eq model.mode "=")}}
+  {{input placeholder="value" type="text" value=model.value key-press=(action "queryParamChanged")}}
+{{/if}}
+<button {{action "remove" on="click"}} title="Remove query parameter">❌</button>

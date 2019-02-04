@@ -1,0 +1,13 @@
+{{#if ready}}
+  <tbody>
+    {{#each overrides as |route|}}
+      {{mirage-overrides/-route model=route}}
+    {{/each}}
+  </tbody>
+{{else}}
+  <tbody>
+    <tr>
+      <th>⏳</th>
+    </tr>
+  </tbody>
+{{/if}}

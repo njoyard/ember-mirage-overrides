@@ -1,0 +1,19 @@
+<tr class="mirage-overrides--route">
+  <th colspan="3">{{model.id}}</th>
+  <th>
+    <button {{action "addCondition" on="click"}} title="Add condition">➕</button>
+  </th>
+</tr>
+
+{{#if model.conditions.length}}
+  <tr>
+    <th>Enabled</th>
+    <th>Conditions</th>
+    <th>Response status</th>
+    <th></th>
+  </tr>
+{{/if}}
+
+{{#each model.conditions as |condition|}}
+  {{mirage-overrides/-condition model=condition onRemove=(action "removeCondition") onChange=(action "conditionChanged")}}
+{{/each}}

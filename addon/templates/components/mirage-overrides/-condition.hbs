@@ -1,0 +1,19 @@
+<td>
+  {{input type="checkbox" checked=model.enabled change=(action "conditionChanged")}}
+</td>
+<td>
+  {{#each model.queryParams as |queryParam index|}}
+    {{mirage-overrides/-query-param model=queryParam onRemove=(action "removeQueryParam") onChange=(action "queryParamChanged") isFirst=(eq index 0)}}
+  {{/each}}
+  <div class="mirage-overrides--condition--add-qp"><button {{action "addQueryParam" on="click"}} title="Add query parameter">➕</button></div>
+</td>
+<td>
+  <select class="mirage-overrides--condition--status" {{action "changeStatus" on="change"}}>
+    {{#each responseCodes as |code|}}
+      <option value={{code.status}} selected={{eq model.statusCode code.status}}>{{code.status}} - {{code.label}}</option>
+    {{/each}}
+  </select>
+</td>
+<th>
+  <button {{action "remove" on="click"}} title="Remove condition">❌</button>
+</th>
